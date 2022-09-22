@@ -15,7 +15,10 @@ def textnum_algorithm():
     args = dict(request.form if request.method == "POST" else request.args)
     args.setdefault("mode", "decode")
 
-    if (text := args.get("text")) and (mode := args.get("mode")):
+    text = args.get("text")
+    mode = args.get("mode")
+
+    if text and mode:
         try:
             ctext = cipher_text.TextNumbers()
 
