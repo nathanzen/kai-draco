@@ -9,7 +9,10 @@ class TextNumbers:
         result = ""
 
         i = 0
-        while quotient := numbers // self.size ** i:
+        while True:
+            quotient = numbers // self.size ** i
+            if not quotient:
+                break
             result = chr(quotient % self.size) + result
             i += 1
 
