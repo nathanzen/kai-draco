@@ -7,7 +7,12 @@ owners_name = "Kai Draco"
 
 @app.route("/")
 def main():
-    return render_template("index.html", title=f"{owners_name}'s Home")
+    return render_template("index.html", name=owners_name)
+
+
+@app.route("/about")
+def about():
+    return render_template("about.html", name=owners_name)
 
 
 @app.route("/magic", methods=["GET", "POST"])
